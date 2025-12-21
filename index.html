@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Realtime Chat</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="module" src="./main.js"></script>
+</head>
+<body>
+  <div id="app">
+    <!-- Username / role overlay -->
+    <div id="auth-overlay">
+      <div id="auth-card">
+        <h1>Enter chat</h1>
+        <label class="field">
+          <span>Username</span>
+          <input id="username-input" type="text" maxlength="20" autocomplete="off" />
+        </label>
+        <button id="enter-chat-btn">Join</button>
+      </div>
+    </div>
+
+    <!-- Main chat layout -->
+    <div id="chat-root" class="hidden">
+      <header id="chat-header">
+        <div class="title-side">
+          <div class="dot"></div>
+          <span>Live Chat</span>
+        </div>
+        <div class="self-info">
+          <span id="self-name"></span>
+          <span id="self-sigma-tag" class="sigma-tag hidden">SIGMA</span>
+        </div>
+      </header>
+
+      <main id="chat-main">
+        <div id="messages"></div>
+      </main>
+
+      <footer id="chat-input-bar">
+        <label id="image-upload-label">
+          📎
+          <input id="image-input" type="file" accept="image/*" />
+        </label>
+        <input id="message-input" type="text" placeholder="Message" autocomplete="off" />
+        <button id="send-btn">Send</button>
+      </footer>
+      <div id="muted-banner" class="hidden">You are muted by SIGMA.</div>
+    </div>
+  </div>
+</body>
+</html>
+
